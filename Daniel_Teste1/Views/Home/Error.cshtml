@@ -1,0 +1,19 @@
+﻿@model Daniel_Teste1.Models.ErrorViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+</head>
+<body>
+    <h2>Error</h2>
+    <p>An error occurred while processing your request.</p>
+
+    @if (Model.ShowRequestId)
+    {
+    <p>
+        <strong>Request ID:</strong> @Model.RequestId
+    </p>
+    }
+</body>
+</html>

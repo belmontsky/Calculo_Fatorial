@@ -1,0 +1,14 @@
+﻿@model FatorialModel
+
+<h2>Calcular Fatorial</h2>
+
+<form method="post">
+    Digite um número inteiro não negativo:
+    <input type="number" name="Numero" value="@Model.Numero" />
+    <input type="submit" value="Calcular" />
+</form>
+
+@if (Model.Resultado != 0)
+{
+    <p>O fatorial de @Model.Numero é @Model.Resultado.</p>
+}
