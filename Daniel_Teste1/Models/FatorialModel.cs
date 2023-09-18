@@ -2,14 +2,14 @@
 {
     public class FatorialModel
     {
-        public int Numero { get; set; }
+        public uint Numero { get; set; }
         public long Resultado => CalcularFatorial(Numero);
 
-        private long CalcularFatorial(int n)
+        private long CalcularFatorial(uint n)
         {
             if (n == 0) return 1;
             long fatorial = 1;
-            for (int i = 1; i <= n; i++)
+            for (uint i = 1; i <= n; i++)
             {
                 fatorial *= i;
             }

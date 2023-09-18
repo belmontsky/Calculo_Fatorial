@@ -14,10 +14,17 @@ namespace Daniel_Teste1.Controllers
         [HttpPost]
         public IActionResult Index(FatorialModel model)
         {
-            if (model.Numero < 0)
+            if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("Numero", "O número precisa ser não negativo.");
+                //Adicionei essa validação para não ficar retornando o view mesmo com erro
+                if (ModelState["Numero"].Errors.Count > 0)
+                {
+                    ModelState.AddModelError("Numero", "O número tem que ser não negativo.");
+                }
+
+                return View(model);
             }
+
             return View(model);
         }
     }
